@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  tutor:
+    build: .
+    container_name: tutor
+    volumes:
+      - tutor-data:/home/tutor/.local/share/tutor
+      - tutor-env:/home/tutor/.local/share/tutor/env
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /home/tutor
+    tty: true
+    stdin_open: true
+    command: bash
+
+volumes:
+  tutor-data:
+  tutor-env:
