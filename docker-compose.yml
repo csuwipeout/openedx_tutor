@@ -4,15 +4,14 @@ services:
   tutor:
     build: .
     container_name: tutor
-    user: root
+    user: root  # optional: change to "tutor" after initial setup
     volumes:
       - tutor-data:/home/tutor/.local/share/tutor
       - tutor-env:/home/tutor/.local/share/tutor/env
       - /var/run/docker.sock:/var/run/docker.sock
     working_dir: /home/tutor
-    tty: true
     stdin_open: true
-    command: bash
+    tty: true
 
 volumes:
   tutor-data:
