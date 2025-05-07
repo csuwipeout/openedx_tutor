@@ -4,6 +4,7 @@ services:
   tutor:
     build: .
     container_name: tutor
+    user: root
     volumes:
       - tutor-data:/home/tutor/.local/share/tutor
       - tutor-env:/home/tutor/.local/share/tutor/env
